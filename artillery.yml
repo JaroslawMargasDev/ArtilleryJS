@@ -3,8 +3,14 @@ config:
   engines:
     playwright: 
       launchOptions:
-        headless: false
+        headless: true
+      showAllPageMetrics: true
+      extendedMetrics: true
   processor: "./tests/artillery/login.js"
+  phases:
+    - name : "ramp up"
+      duration: 10
+      arrivalRate: 1
 scenarios:
     - engine: playwright
-      testFunction: "artilleryScript"
+      testFunction: "artilleryScript" 
