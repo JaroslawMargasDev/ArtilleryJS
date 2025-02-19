@@ -10,7 +10,8 @@ config:
   phases:
     - name : "ramp up"
       duration: 10
-      arrivalRate: 1
+      arrivalRate: 2
+      rampTo: 5
 scenarios:
     - engine: playwright
       testFunction: "artilleryScript" 
